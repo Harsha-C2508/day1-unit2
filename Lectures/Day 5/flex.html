@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flexbox</title>
+    <style>
+      .container {
+        border: 6px solid black;
+        display: flex;
+        flex-direction: column;
+        /* flex-direction:row/column/row-reverse/column-revers */
+        /* flex-direction: column-reverse; */
+        /* flex-direction: column;
+
+
+        flex-wrap:wrap/nowrap/wrap-reverse
+        flex-wrap: wrap-reverse;
+        height: 300px; */
+
+        /* margin:margin-top margin-right margin-bottom margin-left */
+
+        /* flex-flow is shorthand notation for flex-direction and flex-wrap */
+        /* flex-direction: row;
+        flex-wrap: wrap; */
+
+        /* flex-flow: column wrap;
+        height: 300px; */
+
+        /* justify-content:flex-start/flex-end/center/space-between/space-around/space-evenly */
+        /* justify-content: center; */
+        /* height: 600px; */
+
+        /* align-items:stretch/flex-start/flex-end/center */
+        /* align-items: stretch; */
+      }
+      .flex-item {
+        color: white;
+        font-size: 25px;
+        padding: 15px;
+        text-align: center;
+      }
+      .item-1 {
+        background-color: #b4bf35;
+        /* order: 10; */
+        flex-grow: 0;
+        /* flex-shrink:1default value */
+        /* flex-shrink:0  prevents shrinking */
+        /* flex-shrink: 0; */
+        flex-basis:200px;
+        /* giving width */
+        /* width:200px */
+      }
+      .item-2 {
+        background-color: #b95f21;
+        /* order: 0; */
+      }
+      .item-3 {
+        background-color: #1c4c56;
+        /* flex-grow:1 */
+      }
+      .item-4 {
+        background-color: #cfb276;
+        /* flex-grow:1 */
+      }
+      .item-5 {
+        background-color: #6b0803;
+        /* flex-grow:2; */
+        /* flex-shrink: 0; */
+      }
+      .item-6 {
+        background-color: #1c4c56;
+      }
+      .item-7 {
+        background-color: #b95f21;
+      }
+      .item-8 {
+        background-color: #01243a;
+      }
+      .item-9 {
+        background-color: #aad041;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-2">Item 2</div>
+      <div class="flex-item item-3">Item 3</div>
+      <div class="flex-item item-4">Item 4</div>
+      <div class="flex-item item-5">Item 5</div>
+      <div class="flex-item item-6">Item 6</div>
+      <div class="flex-item item-7">Item 7</div>
+      <div class="flex-item item-8">Item 8</div>
+      <div class="flex-item item-9">Item 9</div>
+    </div>
+  </body>
+</html>
+
+<!-- Parent properties
+1.display:flex
+2.flex-direction
+3.flex-wrap
+4.flex-flow
+5.justify-content
+6.align-items -->
+
+<!-- Child properties -->
+<!-- 1.order
+2.flex-grow
+3.flex-shrink
+4.flex-basis -->

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka&family=Montserrat:ital,wght@0,500;0,700;1,600&family=Open+Sans:wght@300;400&family=PT+Serif&family=Poppins:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+            width: 80%;
+            margin: auto;
+            font-family: 'Roboto', sans-serif;
+        }
+        #box{
+            border: 0.5px solid rgb(207, 207, 207);
+            text-align: center;
+        }
+        #box>img{
+            width: 100%;
+        }
+        .prices{
+            display: flex;
+            justify-content: space-around;
+        }
+        .prices>p:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .prices>p:last-child{
+            color: grey;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+data.map(function(ele){
+    var box = document.createElement("div");
+    box.setAttribute("id","box")
+   var img = document.createElement("img");
+   img.src = ele.imgUrl;
+
+   var name = document.createElement("h3");
+   name.textContent = ele.name
+
+   var itemPrice = document.createElement("div");
+   itemPrice.setAttribute("class","prices")
+
+   var price = document.createElement("p");
+   price.textContent = ele.price;
+
+   var offerPrice = document.createElement("p");
+   offerPrice.textContent = ele.strikedOffPrice;
+
+   itemPrice.append(price,offerPrice)
+   
+   box.append(img,name,itemPrice);
+
+   document.querySelector("#container").append(box);
+   })
+</script>

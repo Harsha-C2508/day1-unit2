@@ -1,0 +1,33 @@
+#container {
+  border-style: dashed double none;
+  width: 70%;
+  height: 350px;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+}
+.logo {
+  height: 150px;
+  width: 270px;
+}
+input {
+  margin-left: 59px;
+  margin-top: 15px;
+  outline: none;
+  width: 200px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+#pass {
+  margin-left: 33px;
+}
+label {
+  color: navy;
+  font-size: 20px;
+}
+input:last-child {
+  margin-left: 5px;
+}
+#submit {
+  border: 2px solid;
+}

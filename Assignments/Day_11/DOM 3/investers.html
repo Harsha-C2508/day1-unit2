@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka&family=Montserrat:ital,wght@0,500;0,700;1,600&family=Open+Sans&family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka&family=Montserrat:ital,wght@0,500;0,700;1,600&family=Open+Sans:wght@300;400&family=PT+Serif&family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 15px;
+            width: 88%;
+            margin: auto;
+            text-align: center;
+            font-family: 'Open Sans';
+        }
+        #box{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+
+        }
+        .img{
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .logo{
+            height: 70px;
+        }
+        .name{
+            font-size: 27px;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-family: 'Fredoka', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-size: 50px;
+        }
+        @media all and (min-width: 401px) and (max-width: 720px) {
+            #container{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto ;
+            margin: auto;
+            text-align: center;
+           }
+           #box:nth-child(2){
+               margin-right: 40px ;
+           }
+           #box:nth-child(4){
+               margin-right: 40px ;
+           }
+        }
+
+        @media all and (min-width: 81px) and (max-width: 400px){
+            #container{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto ;
+            margin: auto;
+            text-align: center;
+           }
+        }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+    <div id="container">
+    </div>
+</body>
+</html>
+<script>
+    var investers = [
+    {   
+        name:"Vijay Shekhar Sharma",
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+        role:"Founder & CEO",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {   
+        name:"Kunal Shah",
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+        role:"Founder",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    {   
+        name:"Amrish Rau",
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+        role:"CEO",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+    },
+    {   
+        name:"Sampad Swain",
+        img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+        role:"Co-Founder & CEO",
+        logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+    }
+    ]
+
+    investers.map(function(ele){
+      var box=document.createElement("div");
+      box.setAttribute("id","box")
+
+      var img = document.createElement("img");
+      img.src = ele.img;
+      img.setAttribute("class","img")
+      
+      var name = document.createElement("h2");
+      name.textContent = ele.name;
+      name.setAttribute("class","name")
+
+      var roleName = document.createElement("p");
+      roleName.textContent = ele.role;
+
+      var logoPic = document.createElement("img");
+      logoPic.src = ele.logo;
+      logoPic.setAttribute("class","logo");
+
+      box.append(img,name,roleName,logoPic);
+
+      document.querySelector("#container").append(box);
+    })
+</script>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&family=Fredoka&family=Montserrat:ital,wght@0,500;0,700;1,600&family=PT+Serif&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+      }
+      #top-section{
+        margin: auto;
+
+      }
+      .heading{
+        width: 65%;
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      p{
+        font-weight: 500;
+      }
+      #music{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        width: 95%;
+        margin: auto;
+        grid-template-rows: repeat(1,300px) ;
+        margin-top: 40px;
+      }
+     #music>div{
+       text-align: center;
+     }
+      img{
+        margin: 10px 70px;
+      }
+     #pricing{
+       display: grid;
+       gap: 20px;
+       grid-template-columns: repeat(3,1fr);
+       grid-template-rows: repeat(1,450px);
+       width: 80%;
+       margin: auto;
+       margin-bottom: 40px;
+       margin-top: 40px;
+     }
+     #pricing>div{
+       border-radius: 10px;
+       box-sizing: border-box;
+       padding: 0px 10px;
+       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     }
+     #pricing>div>h1{
+      font-weight: bolder;
+      color: #4f4fbb;
+     }
+     #pricing>div>p{
+       border: 0.5px solid #4f4fbb;
+       background-color: #aeaed7;
+       height: 1px; 
+       margin-top: -5px;
+     }
+     li{
+       list-style-type: square;
+       color: #5d9eb3;
+       font-weight: 500;
+       font-size: 30px;
+       line-height: 55px;
+     }
+     button{
+       border: 2px solid;
+       width: 150px;
+       height: 50px;
+       font-size: 16px;
+       font-weight: bold;
+       color: white;
+       background: #5152a9;
+       border-radius: 15px;
+     }
+      /* Medium screens - take min width and max width according to your screen sizes */
+      @media all and (min-width: 401px) and (max-width: 720px) {
+        #music{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,300px) ;
+        width: 80%;
+       }
+       #pricing{
+       grid-template-columns: repeat(2 ,1fr);
+       grid-template-rows: repeat(2,700px);
+       width: 60%;
+       }
+      }
+
+      /* Small screens - take min width and max width according to your screen sizes */
+
+      @media all and (min-width: 81px) and (max-width: 400px) {
+        #music{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(4,300px) ;
+        width: 80%;
+       }
+       .heading{
+         width: 50%;
+         text-align: center;
+       }
+       #pricing{
+       grid-template-columns: repeat(1,1fr);
+       grid-template-rows: repeat(3,700px);
+       width: 50%;
+       }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Do not change class names and IDs -->
+
+    <!-- Top section -->
+    <div id="top-section">
+      <div class="heading">
+        <h1>Get ready for seamless online music</h1>
+        <p>
+          Utrust is a seamless integration that gives e-commerce businesses the
+          power to accept digital currencies - and get all the benefits you
+          can’t with just traditional payment methods.
+        </p>
+      </div>
+
+      <!-- Music cards -->
+      <div id="music">
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-03-13/1_313769.jpeg" alt="offlineMode">
+          <h2>Offline mode.</h2>
+          <p>Save and listen anywhere</p>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-03-13/2_656773.jpeg" alt="offlineMode">
+          <h2>Offline mode.</h2>
+          <p>Save and listen anywhere</p>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-03-13/3_837237.jpeg" alt="offlineMode">
+          <h2>Offline mode.</h2>
+          <p>Save and listen anywhere</p>
+        </div>
+        <div>
+          <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-03-13/4_842327.jpeg" alt="offlineMode">
+          <h2>Offline mode.</h2>
+          <p>Save and listen anywhere</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom section -->
+
+    <div class="heading">
+      <h1>Listen free or subscribe to MusicLab Premium.</h1>
+      <p>
+        Utrust is a seamless integration that gives e-commerce businesses the
+        power to accept digital currencies - and get all the benefits you can’t
+        with just traditional payment methods.
+      </p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div id="pricing">
+      <div>
+        <h2>MusicBox Free</h2>
+        <h1>$0.00 month</h1>
+         <p></p>
+         <ul>
+           <li>Online Listening</li>
+           <li>Regular Audio</li>
+           <li>With Advertising</li>
+           <li>30 Skips per day</li>
+         </ul>
+         <button>Get free</button>
+      </div>
+      <div>
+        <h2>MusicBox Free</h2>
+        <h1>$0.00 month</h1>
+         <p></p>
+         <ul>
+           <li>Online Listening</li>
+           <li>Regular Audio</li>
+           <li>With Advertising</li>
+           <li>30 Skips per day</li>
+         </ul>
+         <button>Get free</button>
+      </div>
+      <div>
+        <h2>MusicBox Free</h2>
+        <h1>$0.00 month</h1>
+         <p></p>
+         <ul>
+           <li>Online Listening</li>
+           <li>Regular Audio</li>
+           <li>With Advertising</li>
+           <li>30 Skips per day</li>
+         </ul>
+         <button>Get free</button>
+      </div>
+    </div>
+  </body>
+</html>

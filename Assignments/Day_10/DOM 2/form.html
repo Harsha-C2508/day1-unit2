@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 20%;
+            margin: auto;
+            margin-top: 100px;
+        }
+    form>input{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        height: 30px;
+        width: 250px;
+        background-color: white;
+    }
+    #gender{
+        margin-top: 5px;
+        margin-bottom: 20px;
+        height: 35px;
+        width: 260px;
+    }
+    label{
+        color: blue;
+        font-weight: bolder;
+        font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="">Name</label> <br />
+        <input type="text" placeholder="Enter Your Name" id="name"><br />
+        <label for="">Age</label> <br />
+        <input type="text" placeholder="Enter Your Age" id="age"><br />
+        <label for="">Gender</label> <br />
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br />
+        <label for="">Email</label> <br />
+        <input type="email" placeholder="Enter Your Email" id="email"><br />
+        <label for="">Contact</label> <br />
+        <input type="text" placeholder="Enter Your Mobile" id="mobile"><br />
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+   document.querySelector("form").addEventListener("submit",submitForm)
+
+   function submitForm(){
+       event.preventDefault();
+       var name = document.querySelector("#name").value;
+       var age = document.querySelector("#age").value;
+       var gender = document.querySelector("#gender").value;
+       var email = document.querySelector("#email").value;
+       var mobile = document.querySelector("#mobile").value;
+
+       console.log(name,age,gender,email,mobile)
+   }
+</script>
