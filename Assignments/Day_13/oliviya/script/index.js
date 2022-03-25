@@ -1,0 +1,20 @@
+document.querySelector("form").addEventListener("submit",signFun)
+    var signinList = JSON.parse(localStorage.getItem("signInData")) || [];
+    function signFun(){
+        event.preventDefault();
+
+        var name = document.querySelector("#name").value;
+        var email = document.querySelector("#email").value;
+        var pass = document.querySelector("#pass").value;
+        // console.log(name,email,pass)
+        var signObj={
+            userName:name,
+            userEmail:email,
+            userPass:pass
+        }
+        // console.log(signObj)
+        signinList.push(signObj);
+        //  console.log(signinList)
+
+        localStorage.setItem("signInData",JSON.stringify(signinList))
+    }
