@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <style>
+         #heading{
+        border: 2px solid;
+        height: 100px;
+        background-color: royalblue;
+        color: white;
+        display: flex;
+        text-align: center;
+      }
+        #main{
+            display: flex;
+        }
+        #container>div{
+            border: .5 solid gray;
+            margin-top: 5px;
+            text-align: center;
+        }
+        #total{
+            width: 50%;
+            text-align: center;
+            padding-top : 300px;
+            height: 200px;
+        }
+        .price{
+        justify-content: space-around;
+      }
+      .button{
+          width: 150px;
+          
+      }
+      .but{
+        background-color: royalblue;
+        outline: none;
+        border: none;
+        font-size: 20px;
+      }
+      .a{
+        color: white;
+        text-decoration: none;
+      }
+     #heading h1{
+       height: 50px;
+       width: 80%;
+       margin-bottom: 20px;
+       font-size: 40px;
+      }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
+    <div id="heading">
+        <button class="but"><a class="a" href="men.html">Back</a> </button>
+        <h1>Add To Cart</h1>
+       </div>
+    <div id="main">
+        <div id="container"></div>
+        <div id="total">
+             <p></p>
+             <button class="button"><a href="checkout.html" target="blank">Checkout</a></button>
+        </div>
+    </div>
 </body>
 </html>
+<script src="./script/cart.js"></script>
