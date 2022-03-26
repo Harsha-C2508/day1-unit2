@@ -5,8 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  <style>
+    body{
+        background-color: royalblue;
+    }
+    #container{
+        height: 570px;
+        width: 90%;
+        background-color: white;
+        margin: auto;
+        text-align: center;
+    }
+    #container > h3{
+        font-size: 50px;
+        font-family: calibri;
+    }
+    label{
+        margin-left: 20px;
+    }
+    .sr{
+        margin-right: 70px;
+    }
+    input{
+        margin-left: 60px;
+        margin-top: 5px;
+    }
+    #streetname{
+      margin-left: -40px;
+    }
+    #submit{
+        width: 200px;
+    }
+  </style>
 </head>
 <body>
-   <h2>hai welcome to check out room</h2> 
+    <div id="container">
+        <h3>Delivery Address</h3>
+        <form>
+            <label>Address</label>
+            <input id="address" type="text"><br>
+            <label>House No</label>
+            <input id="house" type="text"><br>
+            <label>Phone No</label>
+            <input id="phone" type="text"><br>
+            <label class="sr">Road Name / Street Name</label>
+            <input id="streetname" type="text"><br>
+            <label>CVV</label>
+            <input id="cvv" type="text"><br>
+            <label>Card No</label>
+            <input id="cardNo" type="text">
+        </form>
+        <input id="submit" type="submit">
+    </div>
 </body>
 </html>
