@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+   <div id="navbar"></div>
+   <div id="container"></div>
+
+</body>
+
+<script type="module">
+
+import header from "./components/header.js"    // <----- importing header from components
+let navbar = document.getElementById("navbar");
+navbar.innerHTML = header()
+
+
+let input_box = document.getElementById("search-input")  //<------- getting the input box and adding event to it
+input_box.addEventListener("keypress", (event) => {
+
+    get(event)     //<----- calling get function
+
+})
+
+
+
+const get = async (event) => {         //<------ get function to GET data from API
+    let input = input_box.value
+
+    if (event.code === "Enter") {  
+        try {
+            let res = await fetch(`https://api.github.com/users/${input}/repos`)
+            let data = await res.json()
+            console.log('data:', data)
+
+            displaydata(data)
+
+        } catch (error) {
+            console.log('error:', error)
+        }
+    }
+}
+
+// function to display data got from API
+
+const displaydata = (data) => {
+    document.getElementById("container").innerHTML=""
+    data.map( ({owner :{avatar_url, login}, name}, index) => {
+
+        let leftDiv = create("div")
+        leftDiv.id = "leftDiv"
+        let image = create("img")
+        image.src = avatar_url
+        let Name = create("h3")
+        Name.innerText = login
+        leftDiv.append(image, Name);
+
+        let rightDiv = create("div")
+        rightDiv.id = "rightDiv"
+        let reposDiv = create("div");
+        let repoName = create("p")
+        repoName.innerText = name;
+        reposDiv.append(repoName)
+        rightDiv.append(reposDiv);
+
+        if (index === 0){
+            let dp = document.getElementById("profile-img");
+            dp.src = avatar_url
+            document.getElementById("container").append(leftDiv)
+        }
+        document.getElementById("container").append(rightDiv)
+       
+    })
+}
+
+const create = (item) => {
+   return  document.createElement(item)
+}
+
+</script>
+</html>

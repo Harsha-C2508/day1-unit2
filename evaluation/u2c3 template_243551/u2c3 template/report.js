@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit",markList)
 
 function markList(){
     event.preventDefault();
-     var img = document.createElement("img").src;
+    var img = document.querySelector("#image").value;
     var name = document.querySelector("#name").value;
     var batch = document.querySelector("#batch").value;
     var dsaMark = document.querySelector("#dsa").value;
@@ -25,7 +25,10 @@ function markList(){
     var row = document.createElement("tr");
 
      var td1 = document.createElement("td")
-    td1.img = img
+        var img = document.createElement("img");
+        img.src = "https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652__340.png";
+
+        td1.append(img);
 
     var td2 = document.createElement("td")
     td2.innerText = name;
