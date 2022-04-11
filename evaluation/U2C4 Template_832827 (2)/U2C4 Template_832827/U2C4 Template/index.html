@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="contact.html">Contact List</a></div>
+      <div><a href="favourites.html">Favourites</a></div>
+    </div>
+
+    <form id="form">
+      <h2>Enter Your Contact Details</h2>
+      <input placeholder="Enter Contact name" id="name" type="text" />
+      <input placeholder="Enter Mobile Number" type="number" id="mobile" />
+      <select id="type">
+        <option value="">Select Type</option>
+        <option value="Family">Family</option>
+        <option value="Friends">Friends</option>
+        <option value="Others">Others</option>
+      </select>
+      <input type="submit" value="Add Contact" />
+    </form>
+  </body>
+  <script>
+    // Points for using form
+    // 1. wrap every input inside form tag
+    // 2. instead of taking button, use input type=submit
+    // 3. Add eventListener to form tag
+    // 4. event name should be submit
+    // 5. whenever you use forms, it will try to send data to server, in this process page is getting refreshed -- it is default behaviour
+    //6. we should prevent that default behaviour - event.preventDefault()
+
+    //write js code here
+    // we are using form here, make sure you follow all steps of form
+    document.querySelector("#form").addEventListener("submit",contactFun)
+
+    contactList = JSON.parse(localStorage.getItem("contactList")) || [];
+    function contactFun(){
+    event.preventDefault();
+        var name = document.querySelector("#name").value;
+        var number = document.querySelector("#mobile").value;
+        var type = document.querySelector("#type").value;
+        console.log(name,number,type)
+        var contactObj = {
+          name: name,
+          number: number,
+          type: type
+        }
+        contactList.push(contactObj);
+        // console.log(contactList);
+        localStorage.setItem("contactList", JSON.stringify(contactList));
+    }
+  </script>
+</html>
